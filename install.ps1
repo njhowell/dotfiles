@@ -1,22 +1,19 @@
-﻿Write-Output "Setting execution policy"
-Set-ExecutionPolicy RemoteSigned
-
-Write-Output "Installing Chocolatey"
+﻿Write-Output "Installing Chocolatey"
 iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
 
 
-choco install googlechrome
-choco install 7zip
-choco install git -params '"/noAutoCrlf"'
-choco install gitextensions
-choco install vlc
-choco install atom
-choco install keepass
-choco install putty
-choco install dropbox
-choco install winscp
-choco install poshgit
-choco install slack
+choco install googlechrome -y
+choco install 7zip -y
+choco install git -params '"/noAutoCrlf"' -y
+choco install gitextensions -y
+choco install vlc -y
+choco install atom -y
+choco install keepass -y
+choco install putty -y
+choco install dropbox -y
+choco install winscp -y
+choco install poshgit -y
+choco install slack -y
 
 
 
