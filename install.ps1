@@ -28,7 +28,18 @@ cmd /c "mklink /H $home\.atom\styles.less $PSScriptRoot\atom\styles.less"
 
 
 Write-Output "Setup link to git config"
-cmd /c "mklink /H $ENV:HOMEDRIVE$ENV:HOMEPATH.gitconfig $PSSCriptRoot\git\.gitconfig"
+
+$homepath = $ENV:HOMEPATH
+
+$lastchar = $homepath.Substring($homepath.Length-1)
+
+if($lastchar -ne "\")
+{
+   $homepath += "\"
+}
+
+
+cmd /c "mklink /H $ENV:HOMEDRIVE$homepath.gitconfig $PSSCriptRoot\git\.gitconfig"
 
 write-output "Set GIT_SSH environment variable"
 [Environment]::SetEnvironmentVariable("GIT_SSH", "C:\Program Files (x86)\PuTTY\plink.exe", "User")
