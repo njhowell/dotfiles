@@ -16,6 +16,7 @@ choco install putty
 choco install dropbox
 choco install winscp
 choco install poshgit
+choco install slack
 
 
 
