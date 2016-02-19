@@ -19,16 +19,16 @@ choco install slack -y
 
 Write-Output "Setup links to Atom config and packages directory"
 
-mklink /J ~/.atom/packages $PSScriptRoot/atom/packages
-mklink /H ~/.atom/config.cson $PSScriptRoot/atom/config.cson
-mklink /H ~/.atom/init.coffee $PSScriptRoot/atom/init.coffee
-mklink /H ~/.atom/keymap.cson $PSScriptRoot/atom/keymap.cson
-mklink /H ~/.atom/snippets.cson $PSScriptRoot/atom/snippets.cson
-mklink /H ~/.atom/styles.less $PSScriptRoot/atom/styles.less
+cmd /c mklink /J ~/.atom/packages $PSScriptRoot/atom/packages
+cmd /c mklink /H ~/.atom/config.cson $PSScriptRoot/atom/config.cson
+cmd /c mklink /H ~/.atom/init.coffee $PSScriptRoot/atom/init.coffee
+cmd /c mklink /H ~/.atom/keymap.cson $PSScriptRoot/atom/keymap.cson
+cmd /c mklink /H ~/.atom/snippets.cson $PSScriptRoot/atom/snippets.cson
+cmd /c mklink /H ~/.atom/styles.less $PSScriptRoot/atom/styles.less
 
 
 Write-Output "Setup link to git config"
-mklink /H $ENV:HOMEDRIVE$ENV:HOMEPATH.gitconfig $PSSCriptRoot/git/.gitconfig
+cmd /c mklink /H $ENV:HOMEDRIVE$ENV:HOMEPATH.gitconfig $PSSCriptRoot/git/.gitconfig
 
 write-output "Set GIT_SSH environment variable"
 [Environment]::SetEnvironmentVariable("GIT_SSH", "C:\Program Files (x86)\PuTTY\plink.exe", "User")
