@@ -1,17 +1,12 @@
-﻿Write-Output "Installing Chocolatey"
-iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
-
+﻿
 Write-Output "Install applications"
 
 choco install googlechrome -y
 choco install 7zip -y
-choco install git -params '"/noAutoCrlf"' -y
 choco install gitextensions -y
 choco install vlc -y
 choco install atom -y
 choco install keepass -y
-choco install putty.install -y
-choco install dropbox -y
 choco install winscp -y
 choco install poshgit -y
 choco install slack -y
@@ -40,6 +35,3 @@ if($lastchar -ne "\")
 
 
 cmd /c "mklink /H $ENV:HOMEDRIVE$homepath.gitconfig $PSSCriptRoot\git\.gitconfig"
-
-write-output "Set GIT_SSH environment variable"
-[Environment]::SetEnvironmentVariable("GIT_SSH", "C:\Program Files (x86)\PuTTY\plink.exe", "User")
