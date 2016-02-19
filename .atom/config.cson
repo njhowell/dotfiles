@@ -1,0 +1,21 @@
+"*":
+  core:
+    disabledPackages: [
+      "markdown-preview"
+    ]
+    themes: [
+      "atom-dark-ui"
+      "atom-dark-syntax"
+    ]
+  editor:
+    autoIndentOnPaste: false
+    invisibles: {}
+    tabLength: 4
+  "exception-reporting":
+    userId: "5686e1b6-d801-5486-3101-6baf2cad9df6"
+  "markdown-preview":
+    useGitHubStyle: true
+  "markdown-preview-plus":
+    useGitHubStyle: true
+  welcome:
+    showOnStartup: false
