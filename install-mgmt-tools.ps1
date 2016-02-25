@@ -1,6 +1,2 @@
-﻿install-windowsfeature RSAT-Clustering
-install-windowsfeature RSAT-AD-Tools
-install-windowsfeature RSAT-Hyper-VTools
-install-windowsfeature RSAT-DHCP
-install-windowsfeature RSAT-DNS
-install-windowsfeature GPMC
+choco install rsat -y
+dism /online /enable-feature /feature-name:Microsoft-Hyper-V-Management-Clients /all

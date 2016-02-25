@@ -10,8 +10,6 @@ choco install keepass -y
 choco install winscp -y
 choco install poshgit -y
 choco install slack -y
-choco install rsat -y
-
 
 Write-Output "Setup links to Atom config and packages directory"
 mkdir $home\.atom
