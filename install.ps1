@@ -6,7 +6,6 @@ choco install 7zip -y
 choco install gitextensions -y
 choco install vlc -y
 choco install atom -y
-choco install keepass -y
 choco install winscp -y
 choco install poshgit -y
 choco install slack -y
