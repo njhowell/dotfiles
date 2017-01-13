@@ -21,6 +21,7 @@
 
 foreach ($app in $apps) 
 {
+    Write-Output "Removing $app..."
     Get-AppxPackage -name $app | Remove-AppxPackage
 }
 
