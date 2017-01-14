@@ -12,16 +12,24 @@ choco install winscp -y
 choco install poshgit -y
 choco install slack -y
 
-Write-Output "Setup links to Atom config and packages directory"
-mkdir $home\.atom
 
-cmd /c "mklink /J $home\.atom\packages $PSScriptRoot\atom\packages"
-cmd /c "mklink /H $home\.atom\config.cson $PSScriptRoot\atom\config.cson"
-cmd /c "mklink /H $home\.atom\init.coffee $PSScriptRoot\atom\init.coffee"
-cmd /c "mklink /H $home\.atom\keymap.cson $PSScriptRoot\atom\keymap.cson"
-cmd /c "mklink /H $home\.atom\snippets.cson $PSScriptRoot\atom\snippets.cson"
-cmd /c "mklink /H $home\.atom\styles.less $PSScriptRoot\atom\styles.less"
+If(Test-Path $home\.atom)
+{
+    Write-Output "Atom config already present"
+}
+else
+{
+    Write-Output "Setup links to Atom config and packages directory"
 
+    mkdir $home\.atom
+
+    cmd /c "mklink /J $home\.atom\packages $PSScriptRoot\atom\packages"
+    cmd /c "mklink /H $home\.atom\config.cson $PSScriptRoot\atom\config.cson"
+    cmd /c "mklink /H $home\.atom\init.coffee $PSScriptRoot\atom\init.coffee"
+    cmd /c "mklink /H $home\.atom\keymap.cson $PSScriptRoot\atom\keymap.cson"
+    cmd /c "mklink /H $home\.atom\snippets.cson $PSScriptRoot\atom\snippets.cson"
+    cmd /c "mklink /H $home\.atom\styles.less $PSScriptRoot\atom\styles.less"
+}
 
 Write-Output "Setup link to git config"
 
