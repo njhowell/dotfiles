@@ -42,5 +42,11 @@ if($lastchar -ne "\")
    $homepath += "\"
 }
 
-
-cmd /c "mklink /H $ENV:HOMEDRIVE$homepath.gitconfig $PSSCriptRoot\git\.gitconfig"
+If (Test-Path $ENV:HOMEDRIVE$homepath.gitconfig)
+{
+    Write-Output "Git config already present"
+}
+else
+{
+    cmd /c "mklink /H $ENV:HOMEDRIVE$homepath.gitconfig $PSSCriptRoot\git\.gitconfig"
+}
