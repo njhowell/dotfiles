@@ -1,4 +1,6 @@
-﻿
+﻿Write-Output "Cleaning up Windows 10"
+.$PSScriptRoot\CleanWin10\CleanWin10.ps1
+
 Write-Output "Install applications"
 
 choco install googlechrome -y
