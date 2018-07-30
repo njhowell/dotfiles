@@ -3,7 +3,7 @@ if (! ($currentPrincipal.IsInRole([Security.Principal.WindowsBuiltInRole]::Admin
     Write-Host -ForegroundColor Red "You must run this script as an administrator."
     Exit 1
 }
-﻿
+
 Write-Output "Install and run puppet"
 
 if(Get-Command puppet -ErrorAction 0) {
@@ -15,15 +15,15 @@ else
         $MsiUrl = 'https://downloads.puppetlabs.com/windows/puppet5/puppet-agent-x64-latest.msi'
     } else {
         $MsiUrl = 'https://downloads.puppetlabs.com/windows/puppet5/puppet-agent-x86-latest.msi'
-    }    
+    }
 
-    
+
     $installFile = 'C:\Windows\Temp\puppet-agent.msi'
     while(!(Test-Path $installFile)) {
         Write-Host "Downloading puppet-agent from $MsiUrl to $installFile"
         (new-object net.webclient).DownloadFile($MsiUrl, $installFile)
     }
-    
+
     $install_args = @(
         '/qn',
         '/norestart',
@@ -55,5 +55,3 @@ puppet apply .\puppet\manifests\site.pp --modulepath .\puppet\modules\
 
 write-output "Set GIT_SSH environment variable"
 [Environment]::SetEnvironmentVariable("GIT_SSH", "C:\Program Files (x86)\PuTTY\plink.exe", "User")
-
-
