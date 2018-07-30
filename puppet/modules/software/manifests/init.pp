@@ -77,4 +77,22 @@ class software {
         require => Class['chocolatey']
     }
     
+    package { 'vagrant':
+        ensure          => 'latest',
+        provider        => 'chocolatey',
+        require => Class['chocolatey']
+    }
+    
+    package { 'virtualbox':
+        ensure          => 'latest',
+        provider        => 'chocolatey',
+        require => Class['chocolatey']
+    }
+    
+    package { 'vmwareworkstation':
+        ensure          => 'latest',
+        provider        => 'chocolatey',
+        require => Class['chocolatey']
+    }
+    
 }
