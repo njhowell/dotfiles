@@ -12,3 +12,4 @@ choco install poshgit -y
 choco install slack -y
 choco install conemu -y
 choco install gitkraken -y
+choco install launchy -y
