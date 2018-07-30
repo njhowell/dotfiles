@@ -1,8 +1,4 @@
 # dotfiles
 
 
-Get started by running the following in powershell:
-
-```PowerShell
-iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/njhowell/dotfiles/master/init.ps1'))
-```
+Get started by downloading a copy of this repo and running `init.ps1`.
