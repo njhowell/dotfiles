@@ -12,6 +12,10 @@ class software {
         require => Class['chocolatey']
     }
 
+    windows_env { 'PATH=C:\Program Files\Git\bin':
+      require => Package['git']
+    }
+
     package { 'putty.install':
         ensure          => 'latest',
         provider        => 'chocolatey',
@@ -36,16 +40,22 @@ class software {
         require => Class['chocolatey']
     }
 
+    windows_env { 'PATH=C:\Users\nick.howell\AppData\Local\atom':
+      require => Package['atom']
+    }
+
     package { 'winscp':
         ensure          => 'latest',
         provider        => 'chocolatey',
         require => Class['chocolatey']
     }
+
     package { 'poshgit':
         ensure          => 'latest',
         provider        => 'chocolatey',
         require => Class['chocolatey']
     }
+
     package { 'slack':
         ensure          => 'latest',
         provider        => 'chocolatey',
