@@ -51,7 +51,3 @@ if($env:Path -notcontains 'C:\Program Files\Puppet Labs\Puppet\bin' ) {
 }
 
 puppet apply .\puppet\manifests\site.pp --modulepath .\puppet\modules\
-
-
-write-output "Set GIT_SSH environment variable"
-[Environment]::SetEnvironmentVariable("GIT_SSH", "C:\Program Files (x86)\PuTTY\plink.exe", "User")

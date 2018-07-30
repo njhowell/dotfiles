@@ -16,6 +16,10 @@ class software {
       require => Package['git']
     }
 
+    windows_env {'GIT_SSH=C:\Program Files\PuTTY\plink.exe':
+      require => [Package['git'], Package['putty.install']]
+    }
+
     package { 'putty.install':
         ensure          => 'latest',
         provider        => 'chocolatey',
