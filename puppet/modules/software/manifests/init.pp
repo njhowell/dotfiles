@@ -72,12 +72,6 @@ class software {
         require => Class['chocolatey']
     }
 
-    package { 'gitkraken':
-        ensure          => 'latest',
-        provider        => 'chocolatey',
-        require => Class['chocolatey']
-    }
-
     package { 'launchy':
         ensure          => 'latest',
         provider        => 'chocolatey',
