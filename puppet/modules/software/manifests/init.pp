@@ -119,4 +119,10 @@ class software {
         provider        => 'chocolatey',
         require => Class['chocolatey']
     }
+
+    package { 'github-desktop':
+        ensure          => 'latest',
+        provider        => 'chocolatey',
+        require => Class['chocolatey']
+    }
 }
