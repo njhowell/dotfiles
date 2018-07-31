@@ -113,4 +113,10 @@ class software {
         provider        => 'chocolatey',
         require => Class['chocolatey']
     }
+
+    package { 'adobereader':
+        ensure          => 'latest',
+        provider        => 'chocolatey',
+        require => Class['chocolatey']
+    }
 }
