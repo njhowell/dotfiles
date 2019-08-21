@@ -16,4 +16,27 @@ class common {
       source => 'puppet:///modules/common/pageant.lnk'
     }
 
+    registry_value { 'HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Search\AllowCortana':
+        ensure => present,
+        type   => dword,
+        data   => 0,
+    }
+
+    registry_value { 'HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Search\DisableWebSearch':
+        ensure => present,
+        type   => dword,
+        data   => 1,
+    }
+
+    registry_value { 'HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Search\ConnectedSearchUseWeb':
+        ensure => present,
+        type   => dword,
+        data   => 0,
+    }
+
+    registry_value { 'HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Search\ConnectedSearchUseWebOverMeteredConnections':
+        ensure => present,
+        type   => dword,
+        data   => 0,
+    }
 }
