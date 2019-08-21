@@ -16,6 +16,12 @@ class software {
       require => Package['git']
     }
 
+    package {'vscode':
+        ensure   => 'latest',
+        provider => 'chocolatey',
+        require  => Class['chocolatey']
+    }
+
     windows_env {'GIT_SSH=C:\Program Files\PuTTY\plink.exe':
       require => [Package['git'], Package['putty.install']]
     }
@@ -38,16 +44,6 @@ class software {
         require => Class['chocolatey']
     }
 
-    package { 'atom':
-        ensure          => 'latest',
-        provider        => 'chocolatey',
-        require => Class['chocolatey']
-    }
-
-    windows_env { 'PATH=C:\Users\nick.howell\AppData\Local\atom':
-      require => Package['atom']
-    }
-
     package { 'winscp':
         ensure          => 'latest',
         provider        => 'chocolatey',
@@ -61,12 +57,6 @@ class software {
     }
 
     package { 'slack':
-        ensure          => 'latest',
-        provider        => 'chocolatey',
-        require => Class['chocolatey']
-    }
-
-    package { 'conemu':
         ensure          => 'latest',
         provider        => 'chocolatey',
         require => Class['chocolatey']
@@ -118,5 +108,11 @@ class software {
         ensure          => 'latest',
         provider        => 'chocolatey',
         require => Class['chocolatey']
+    }
+
+    package { 'powershell-core':
+        ensure   => 'latest',
+        provider => 'chocolatey',
+        require  => Class['chocolatey']
     }
 }
