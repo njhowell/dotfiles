@@ -6,7 +6,16 @@ class common {
         ensure => directory,
     }
 
+    file {'c:/users/nick.howell/Documents/PowerShell':
+        ensure => directory,
+    }
+
     file {'c:/users/nick.howell/Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1':
+        ensure => present,
+        source => 'puppet:///modules/common/Microsoft.PowerShell_profile.ps1'
+    }
+
+    file {'c:/users/nick.howell/Documents/PowerShell/Microsoft.PowerShell_profile.ps1':
         ensure => present,
         source => 'puppet:///modules/common/Microsoft.PowerShell_profile.ps1'
     }
